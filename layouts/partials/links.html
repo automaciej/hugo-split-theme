@@ -1,3 +1,4 @@
+{{- $page := . -}}
 <div class="split-lists">
 
   {{ range $key, $value := .Site.Params.links }}
@@ -8,7 +9,13 @@
         <h3>{{ $list.heading }}</h3>
         <ul>
           {{ range $list.link }}
-            <li><a href="{{ .url | safeURL }}" title="{{ .text }}" target="{{ cond (.new_tab | default false) "_blank" "_self" }}">{{ .text }}</a></li>
+	  {{- $url_ := "" -}}
+	  {{- if .url -}}
+	  {{- $url_ = .url }}
+	  {{- else if .ref -}}
+	  {{- $url_ = urls.RelRef $page .ref -}}
+	  {{- end -}}
+            <li><a href="{{ $url_ | safeURL }}" title="{{ .text }}" target="{{ cond (.new_tab | default false) "_blank" "_self" }}">{{ .text }}</a></li>
           {{ end }}
         </ul>
       </div>
