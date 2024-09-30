@@ -309,6 +309,12 @@ body.page-template-page-fullsingle-split {
     border-left: 3px solid $color-text;
   }
 
+  hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 2px solid lighten($color-background, 15);
+  }
+
   ul.page-list {
     margin-left: 0.1em;
     list-style-type: none;
