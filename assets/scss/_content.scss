@@ -339,6 +339,25 @@ body.page-template-page-fullsingle-split {
     }
   }
 
+  nav#TableOfContents > ul {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      margin-left: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 1em;
+      line-height: 1.3em;
+
+      li {
+        font-size: 0.9em;
+      }
+    }
+  }
+
 }
 
 //-------------------------------------------------------------------------------
