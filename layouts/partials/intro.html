@@ -8,5 +8,8 @@
     {{ .Title }}
   </h1>
   {{ end }}
-  {{ with .Params.tagline }}<h2 class="tagline">{{ . }}</h2>{{ end }}
+  {{ if .Params.tagline }}<h2 class="tagline">{{ .Params.tagline }}</h2>
+  {{- else if .Title  -}}
+  <h2 class="title">{{ .Title }}<h2>
+  {{- end }}
 </div>
