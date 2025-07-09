@@ -101,6 +101,14 @@ body.page-template-page-fullsingle-split {
 
   }
 
+  .split-content-wide {
+    width: 100%;
+
+    .split-content-vertically-center {
+      max-width: 80%;
+    }
+  }
+
 }
 
 //-------------------------------------------------------------------------------
@@ -242,6 +250,7 @@ body.page-template-page-fullsingle-split {
 
   h3, .h3 {
     font-size: 1.25;
+    font-weight: bold;
     line-height: inherit;
     margin-top: 0;
     margin-bottom: 20px;
@@ -315,6 +324,11 @@ body.page-template-page-fullsingle-split {
     border: 2px solid lighten($color-background, 15);
   }
 
+  ul.year-list {
+    margin-left: 0.1em;
+    list-style-type: none;
+  }
+
   ul.page-list {
     margin-left: 0.1em;
     list-style-type: none;
@@ -332,11 +346,39 @@ body.page-template-page-fullsingle-split {
       padding-right: 5px;
       padding-bottom: 5px;
       border-radius: 6px;
+      display: inline-block;
+      width: 30%;
+      min-width: 220px;
+      vertical-align: top;
 
       a {
         border-bottom: 0;
       }
     }
+  }
+
+  div.social {
+    text-align: center;
+  }
+  ul.social {
+      margin-left: 0.1em;
+      list-style-type: none;
+      margin-bottom: 0.3em;
+
+      li {
+        display: inline-block;
+        margin: 3px;
+
+        a {
+          border-bottom: 0;
+          font-size: 30px;
+          font-weight: bold;
+
+          i {
+            font-style: normal;
+          }
+        }
+      }
   }
 
   nav#TableOfContents > ul {

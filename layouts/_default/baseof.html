@@ -10,21 +10,24 @@
   <div class="fs-split">
 
     <!-- Image -->
-    {{ if .Params.visual.image.enable | default .Site.Params.visual.image.enable }}
+    {{- $image_enable := .Params.visual.image.enable | default .Site.Params.visual.image.enable -}}
+    {{- $video_enable := .Params.visual.video.enable | default .Site.Params.visual.video.enable -}}
+    {{- if $image_enable -}}
 
       <div class="split-image">
 
       </div>
 
     <!-- Video -->
-    {{ else if .Params.visual.video.enable | default .Site.Params.visual.video.enable }}
+    {{ else if $video_enable }}
 
       {{ partial "video" . }}
 
     {{ end }}
 
     <!-- Content Side -->
-    <div class="split-content">
+    {{- $wide := and (not $image_enable) (not $video_enable) -}}
+    <div class="split-content{{ if $wide }} split-content-wide{{ end }}">
       <div class="split-content-vertically-center">
         <!-- Intro -->
         {{ partial "intro" . }}
