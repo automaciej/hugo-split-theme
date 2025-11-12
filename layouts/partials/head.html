@@ -4,7 +4,10 @@
 <!-- SEO -->
 <title>{{ if .IsPage }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 {{ with .Site.Params.author }}<meta name="author" content="{{ . }}" />{{ end }}
-{{ with .Site.Params.description }}<meta name="description" content="{{ . }}" />{{ end }}
+{{ with .Description }}<meta name="description" content="{{ . }}" />
+  {{- else -}}
+    {{- with .Site.Params.description }}<meta name="description" content="{{ . }}" />{{ end -}}
+{{  end }}
 <meta name="robots" content="index, follow" />
 <meta name="referrer" content="always" />
 {{ if .IsPage }}<link rel="canonical" href="{{ .Permalink }}" />{{ end }}
